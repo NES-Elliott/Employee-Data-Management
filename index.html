@@ -1,23 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>TEMPLATE | Nathaniel Spry</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>TEMPLATE | Nathaniel Spry</title>
 
-	<!-- CSS Reset Sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- CSS Sheet -->
-    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-    <!-- Google Fonts -->
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- CSS Reset Sheet -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- CSS Sheet -->
+	    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+	    <!-- Google Fonts -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-</head>
-<body>
+	</head>
+	<body>
 
-	<!-- Javascript -->
-	<script type="text/javascript" src="assets/javascript/tempapp.js"></script>
-</body>
+		<div class="container"> <!-- CONTAINER -->
+			<div class="row"> <!-- ROW -->
+				<div class="col-md-12">
+
+					<div class="jumbotron"> <!-- JUMBOTRON -->
+						<h2>
+							Employee Data Management
+						</h2>
+						<p>
+		                    A Comprehensive Directory of Employee Billable Hours
+		                </p>
+					</div> <!-- JUMBOTRON END -->
+
+					<div class="row"> <!-- ROW -->
+						<div class="col-md-12">
+
+							<div class="panel panel-default"> <!-- PANEL -->
+								<div class="panel-heading"> <!-- PANEL HEADER -->
+									<h3 class="panel-title">
+										Current Employees
+									</h3>
+								</div> <!-- PANEL HEADER END -->
+								<div class="panel-body"> <!-- PANEL BODY -->
+								<!-- Add table stuff here -->
+								</div> <!-- PANEL BODY END -->
+
+							</div> <!-- PANEL END -->
+
+						<div class="panel panel-default"> <!-- PANEL -->
+							<div class="panel-heading"> <!-- PANEL HEADER -->
+							
+							</div>
+							<div class="panel-body"> <!-- PANEL BODY -->
+								<form role="form">
+									<div class="form-group">
+										 
+										<label for="employee-name">
+											Employee Name
+										</label>
+										<input type="name" class="form-control" id="employee-name" />
+									</div>
+									<div class="form-group">
+										 
+										<label for="employee-role">
+											Role
+										</label>
+										<input type="role" class="form-control" id="employee-role" />
+									</div>
+									<div class="form-group">
+			                            <label for="employee-start">
+											Start Date (DD/MM/YY)
+										</label>
+										<input type="date" class="form-control" id="employee-start" />
+										
+			                        </div>
+			                        <div class="form-group">
+			                            <label for="employee-rate">
+			                                    Monthly Rate
+			                            </label>
+			                            <input type="date" class="form-control" id="employee-rate" />
+			                        </div>
+
+									<button type="submit" class="btn btn-default">
+										Submit
+									</button>
+								</form>
+							</div> <!-- PANEL BODY END -->
+						</div> <!-- PANEL END -->
+						</div>
+					</div> <!-- ROW END -->
+				</div>
+			</div> <!-- ROW END -->
+		</div> <!-- CONTAINER END -->
+
+
+		<!-- Javascript -->
+		<script type="text/javascript" src="assets/javascript/tempapp.js"></script>
+	</body>
 </html>
