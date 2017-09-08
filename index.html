@@ -11,7 +11,14 @@
 		<!-- CSS Sheet -->
 	    <link rel="stylesheet" href="assets/css/style.css">
 	    <!-- Google Fonts -->
+<<<<<<< HEAD
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+=======
 
+>>>>>>> df3143dc3ee36c660229b15fd67ad9b0307d9b39
 	</head>
 	<body>
 
@@ -39,17 +46,18 @@
 								</div> <!-- PANEL HEADER END -->
 								<div class="panel-body"> <!-- PANEL BODY -->
 
-									<table class="table table-hover">  <!-- TABLE -->
+									<table class="table table-hover" id="table-employee">  <!-- TABLE -->
 										<thead>
 											<tr>
 												<th>Employee Name</th>
 												<th>Role</th>
 												<th>Start Date</th>
+												<th>Months Worked</th>
 												<th>Monthy Rate</th>
+												<th>Total Billed</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr id="table-employee"></tr>
 										</tbody>
 									</table> <!-- TABLE END-->
 
@@ -80,7 +88,7 @@
 				                            <label for="date-input">
 												Start Date (DD/MM/YY)
 											</label>
-											<input type="date" class="form-control" id="date-input" />
+											<input type="start-date" class="form-control" id="date-input" />
 											
 				                        </div>
 				                        <div class="form-group">
@@ -104,9 +112,13 @@
 
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<<<<<<< HEAD
+		<!-- Javascript -->
+=======
 		<!-- MomentJS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 		<!-- Javascript -->	
+>>>>>>> df3143dc3ee36c660229b15fd67ad9b0307d9b39
 		<script type="text/javascript" src="assets/javascript/tempapp.js"></script>
 	</body>
 </html>
