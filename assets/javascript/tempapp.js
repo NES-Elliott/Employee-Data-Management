@@ -2,63 +2,54 @@
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyCQZuBojph7bYmNnxDGqg-Vr7dn4MvI0Xc",
-        authDomain: "class-b241f.firebaseapp.com",
-        databaseURL: "https://class-b241f.firebaseio.com",
-        projectId: "class-b241f",
-        storageBucket: "class-b241f.appspot.com",
-        messagingSenderId: "721576404382"
-      };
-      firebase.initializeApp(config);
+    apiKey: "AIzaSyBgTC79cv13lDYywizFh52E1yqjORgAoUg",
+    authDomain: "employeedatamanagment-199b9.firebaseapp.com",
+    databaseURL: "https://employeedatamanagment-199b9.firebaseio.com",
+    projectId: "employeedatamanagment-199b9",
+    storageBucket: "",
+    messagingSenderId: "669250259490"
+  };
+  firebase.initializeApp(config);
   
-      // Create a variable to reference the database.
-      var database = firebase.database();
+  var database = firebase.database();
+
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
   
-      // Initial Values
-      var name = "";
-      var role = "";
-      var startDate = 0;
-      var rate = "";
+    var empName = $("#name-input").val().trim();
+    var empRole = $("#role-input").val().trim();
+    var empStart = moment($("#date-input").val().trim(), "DD/MM/YY").format("X");
+    var empRate = $("#rate-input").val().trim();
+    var newEmp = {
+      name: empName,
+      role: empRole,
+      start: empStart,
+      rate: empRate
+    };
   
-      // Capture Button Click
-      $("#submit").on("click", function(event) {
-        event.preventDefault();
+    database.ref().push(newEmp);
   
-        // Grabbed values from text boxes
-        name = $("#name-input").val().trim();
-        role = $("#role-input").val().trim();
-        startDate = $("#date-input").val().trim();
-        rate = $("#rate-input").val().trim();
+    $("#name-input").val("");
+    $("#role-input").val("");
+    $("#date-input").val("");
+    $("#rate-input").val("");
+
+  });
   
-        // Code for handling the push
-        database.ref().push({
-          name: name,
-          role: role,
-          startDate: startDate,
-          rate: rate,
-          dateAdded: firebase.database.ServerValue.TIMESTAMP
-        });
+  database.ref().on("child_added", function(childSnapshot) {
   
-      });
+
+    var empName = childSnapshot.val().name;
+    var empRole = childSnapshot.val().role;
+    var empStart = childSnapshot.val().start;
+    var empRate = childSnapshot.val().rate;
   
-      // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-      database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-        // storing the snapshot.val() in a variable for convenience
-        var sv = snapshot.val();
+    var empStartClean = moment.unix(empStart).format("MM/DD/YY");
   
-        // Console.loging the last user's data
-        console.log(sv.name);
-        console.log(sv.role);
-        console.log(sv.startDate);
-        console.log(sv.rate);
+    var empMonths = moment().diff(moment.unix(empStart, "X"), "months");
   
-        // Change the HTML to reflect
-        $("#name-display").html(sv.name);
-        $("#role-display").html(sv.role);
-        $("#startDate-display").html(sv.startDate);
-        $("#rate-display").html(sv.rate);
+    var empBilled = empMonths * empRate;
   
-        // Handle the errors
-      }, function(errorObject) {
-        console.log("Errors handled: " + errorObject.code);
-      });
+    $("#table-employee > tbody").append("<tr><td>" + empName + "</td><td>" + empRole + "</td><td>" +
+    empStartClean + "</td><td>" + empMonths + "</td><td>" + empRate + "</td><td>" + empBilled + "</td></tr>");
+  });
